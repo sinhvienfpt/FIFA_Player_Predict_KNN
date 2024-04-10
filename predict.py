@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.neighbors import KNeighborsClassifier
 
 # Load the data
-df = pd.read_csv('./data.csv')
+df = pd.read_csv('./data/data.csv')
 df = df.dropna()
 
 # Define the features and the target
@@ -20,10 +20,8 @@ model.fit(X, y)
 def FIFA_player_predict(PAC, SHO, PAS, DRI, DEF, PHY):
     input_features = pd.DataFrame({'PAC': [PAC], 'SHO': [SHO], 'PAS': [PAS], 'DRI': [DRI], 'DEF': [DEF], 'PHY': [PHY]})
     result = model.predict(input_features)
-    return result
+    return str(result).strip("['']")
 
 
 if __name__ == '__main__':
     print(FIFA_player_predict(90, 80, 70, 90, 60, 80))
-
-
