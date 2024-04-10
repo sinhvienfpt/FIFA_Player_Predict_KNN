@@ -1,7 +1,7 @@
 import tkinter as tk
 from predict import FIFA_player_predict 
 import ctypes
-
+ 
 def search_player():
     # get values from entry widgets
     pac = int(entry_pac.get())
