@@ -15,7 +15,9 @@
 
 ## Technologies Useed
 - GUI : Tkinter
-- Algorithm : K-nearest neighbors
+- Algorithm : K-nearest neighbors (Sklearn)
+
+    ```pip3 install -U scikit-learn```
 - Data Pre-processing and Analysis: pandas + numpy
 
 ## Dataset 
