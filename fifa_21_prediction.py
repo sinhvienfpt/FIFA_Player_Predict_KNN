@@ -1,5 +1,6 @@
 import tkinter as tk
 from predict import FIFA_player_predict 
+import ctypes
 
 def search_player():
     # get values from entry widgets
@@ -19,6 +20,9 @@ def search_player():
 # Create window
 root = tk.Tk()
 
+# Change the taskbar icon, app icon, title and size of the window
+myappid = 'mycompany.myproduct.subproduct.version'
+ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 root.title("FIFA 21")
 root.geometry("500x350+500+200")
 root.config(background='#f0f0f0')
@@ -58,3 +62,4 @@ player_label = tk.Label(root, text="", font=("Arial", 14), bg="#f0f0f0")
 player_label.grid(row=0, column=2, rowspan=3, padx=10, pady=10, sticky="w")
 
 root.mainloop()
+
