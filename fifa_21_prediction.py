@@ -14,7 +14,7 @@ def search_player():
     player_name = FIFA_player_predict(pac, sho, pas, dri, defend, phy)
     
     # Update label with player's name
-    player_label.config(text="Player's Name: " + player_name)
+    player_label.config(text="Player's Name: " + str(player_name))
     player_label.grid(row=0, column=3, rowspan=3, padx=50, pady=10, sticky="nsew")
 
 # Create window

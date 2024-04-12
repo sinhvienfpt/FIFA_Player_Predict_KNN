@@ -4,11 +4,11 @@ from sklearn.neighbors import KNeighborsClassifier
 # Load the data
 df = pd.read_csv('./data/data.csv')
 df = df.dropna()
-
+df
 # Define the features and the target
 features = ['PAC', 'SHO', 'PAS', 'DRI', 'DEF', 'PHY']
 X = df[features]
-y = df['Name']
+y = df['Id']
 
 
 # Create a KNN model    
@@ -20,8 +20,8 @@ model.fit(X, y)
 def FIFA_player_predict(PAC, SHO, PAS, DRI, DEF, PHY):
     input_features = pd.DataFrame({'PAC': [PAC], 'SHO': [SHO], 'PAS': [PAS], 'DRI': [DRI], 'DEF': [DEF], 'PHY': [PHY]})
     result = model.predict(input_features)
-    return str(result).strip("['']")
+    return result
 
 
 if __name__ == '__main__':
-    print(FIFA_player_predict(90, 80, 70, 90, 60, 80))
+    print(df.iloc[FIFA_player_predict(97,98,93,98,61,78)])
