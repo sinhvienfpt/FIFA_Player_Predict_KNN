@@ -19,8 +19,10 @@ model.fit(X, y)
 # Function to predict the player
 def FIFA_player_predict(PAC, SHO, PAS, DRI, DEF, PHY):
     input_features = pd.DataFrame({'PAC': [PAC], 'SHO': [SHO], 'PAS': [PAS], 'DRI': [DRI], 'DEF': [DEF], 'PHY': [PHY]})
-    result = model.predict(input_features)
-    return result
+    result_id = model.predict(input_features)
+    
+    name,version = df[df['Id'] == result_id[0]][['Name', 'Version']].values[0]
+    return "Player: {} - Version: {}".format(name, version)
 
 
 if __name__ == '__main__':

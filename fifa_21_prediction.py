@@ -1,7 +1,10 @@
 import tkinter as tk
+import pandas as pd
 from predict import FIFA_player_predict 
 import ctypes
- 
+
+DF = pd.read_csv('./data/data.csv')
+
 def search_player():
     # get values from entry widgets
     pac = int(entry_pac.get())
@@ -14,7 +17,7 @@ def search_player():
     player_name = FIFA_player_predict(pac, sho, pas, dri, defend, phy)
     
     # Update label with player's name
-    player_label.config(text="Player's Name: " + str(player_name))
+    player_label.config(text=str(player_name))
     player_label.grid(row=0, column=3, rowspan=3, padx=50, pady=10, sticky="nsew")
 
 # Create window
